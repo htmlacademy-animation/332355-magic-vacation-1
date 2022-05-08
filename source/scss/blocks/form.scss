@@ -1,3 +1,8 @@
+.screen--game.active .form__field {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
 .form {
   position: relative;
   display: flex;
@@ -43,6 +48,10 @@
   border: 0;
   border-radius: 3rem;
   outline: none;
+  opacity: 0;
+  transform: scaleX(.1);
+  transform-origin: right;
+  transition: transform .3s cubic-bezier(.1,-0.12,.25,.91), opacity .4s linear;
 
   &:focus {
     border: 1px solid $c-purple;
