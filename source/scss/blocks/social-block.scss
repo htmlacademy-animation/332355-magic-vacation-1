@@ -36,7 +36,8 @@
     background-color: $c-light;
     border: 2px solid $c-light;
     z-index: -1;
-    transition: width .2s, height .2s;
+    transform: translate(-50%, -50%) scale(0);
+    transition: width .2s, height .2s, transform .4s cubic-bezier(.13,.85,.5,.5);
   }
 
   svg {
