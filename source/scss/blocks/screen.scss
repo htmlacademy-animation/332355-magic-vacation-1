@@ -305,6 +305,17 @@
 
 .screen--prizes {
   background-color: $c-dark;
+  z-index: 3;
+  opacity: 0;
+  transition: opacity .4s linear;
+
+  &.active {
+    opacity: 1;
+
+    &:before {
+      transform: translateY(0);
+    }
+  }
 }
 
 .screen--game {
