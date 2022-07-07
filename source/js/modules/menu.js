@@ -19,7 +19,7 @@ export default () => {
   for (let i = 0; i < menuLinks.length; i++) {
     menuLinks[i].addEventListener(`click`, function (evt) {
 
-      if (menuLinks[i].dataset.href.includes(`prize`)) {
+      if (menuLinks[i].dataset.href.includes(`prize`) && window.location.href.includes(`story`)) {
         overlay.classList.add(`overlay--visible`);
 
         evt.preventDefault();
