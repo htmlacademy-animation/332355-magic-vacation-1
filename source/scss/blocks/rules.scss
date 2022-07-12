@@ -158,7 +158,7 @@
     line-height: 5rem;
     text-align: center;
     opacity: 0;
-    animation: counter-appear .2s forwards;
+    animation: opacity-appear .2s forwards;
 
     @media (max-width: $tablet) and (orientation: portrait) {
       top: 1rem;
@@ -206,7 +206,7 @@
     margin: 0;
     opacity: 0;
     transform: translateX(10%);
-    animation: text-appear .3s forwards ease;
+    animation: text-appear .3s forwards ease, opacity-appear .3s forwards;
 
     @media (max-width: $tablet) and (orientation: portrait) {
       min-height: calc(1.4rem * 2.2);
@@ -241,7 +241,7 @@
     left: auto;
     opacity: 0;
     transform: translateY(-50%);
-    animation: link-appear .3s forwards ease;
+    animation: link-appear .3s forwards ease, opacity-appear .3s forwards;
     animation-delay: 1s;
   }
 
@@ -267,11 +267,16 @@
 
   span {
     opacity: 0;
-    animation: text-appear .4s forwards ease;
+    animation: opacity-appear .4s forwards ease;
     animation-delay: 1.2s;
   }
 }
 
+@keyframes opacity-appear {
+  to {
+    opacity: 1;
+  }
+}
 
 @keyframes bullets-appear {
   to {
@@ -279,22 +284,14 @@
   }
 }
 
-@keyframes counter-appear {
-  to {
-    opacity: 1;
-  }
-}
-
 @keyframes text-appear {
   to {
-    opacity: 1;
     transform: translateX(0);
   }
 }
 
 @keyframes link-appear {
   to {
-    opacity: 1;
     width: 100%;
   }
 }
