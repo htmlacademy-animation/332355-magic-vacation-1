@@ -1,0 +1,16 @@
+.title {
+  &__word {
+    overflow: hidden;
+    display: block;
+    line-height: 1.2;
+  }
+
+  &__word span {
+    display: inline-block;
+    transform: translateY(115%);
+  }
+  
+  &.active .title__word span {
+    transform: translateX(0);
+  }
+}
