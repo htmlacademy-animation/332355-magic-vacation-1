@@ -4,7 +4,6 @@ export default class AccentTypographyBuild {
       timer,
       classForActivate,
       property,
-      timeOffsetDelta = 20
   ) {
 
     this._elementSelector = elementSelector;
@@ -14,20 +13,37 @@ export default class AccentTypographyBuild {
 
     this._element = typeof this._elementSelector === `string` ? document.querySelector(this._elementSelector) : this._elementSelector;
 
-    this._timeOffset = 0;
-    this._timeOffsetDelta = timeOffsetDelta;
+    this._timeOffset = 120;
 
-    this.prepareText(timeOffsetDelta);
+    this.prepareText();
   }
 
 
-  createElement(letter, delta) {
+  createElement(letter, letterIndex, wordIndex) {
     const span = document.createElement(`span`);
 
     span.textContent = letter;
     span.style.transition = this.getTransition();
-    this._timeOffset += delta;
 
+    if (letterIndex % 3 === 0) {
+      this._timeOffset = 90;
+    }
+
+    if (letterIndex % 3 === 1) {
+      this._timeOffset = 20;
+    }
+
+    if (letterIndex % 3 === 2) {
+      this._timeOffset = 60;
+    }
+
+    console.log(wordIndex)
+    if (wordIndex > 0) {
+      this._timeOffset = this._timeOffset + 200;
+      
+    }
+
+    
     return span;
   }
 
@@ -36,16 +52,16 @@ export default class AccentTypographyBuild {
     return `${this._property} ${this._timer}ms ease ${this._timeOffset}ms`;
   }
 
-  prepareText(delta) {
+  prepareText() {
     if (!this._element) {
       return;
     }
 
     const text = this._element.textContent.trim().split(/[\s]+/);
 
-    const content = text.reduce((fragmentParent, word) => {
-      const wordElement = Array.from(word).reduce((fragment, letter) => {
-        fragment.appendChild(this.createElement(letter, delta));
+    const content = text.reduce((fragmentParent, word, wordIndex) => {
+      const wordElement = Array.from(word).reduce((fragment, letter, letterIndex) => {
+        fragment.appendChild(this.createElement(letter, letterIndex, wordIndex));
         return fragment;
       }, document.createDocumentFragment());
 
