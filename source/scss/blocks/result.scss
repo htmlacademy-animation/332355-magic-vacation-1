@@ -67,13 +67,16 @@
     top: 37%;
     left: 50%;
     width: 20%;
-    // height: 70%;
+    transform-origin: bottom;
+    animation: fade-in ease-in-out 1s, leaves-move-1 ease-in-out 1s 2, leaves-move-2 ease-in-out 1s 2s 2;
   }
 
   &--leaf-2 {
     top: 53%;
     right: 56%;
     width: 22%;
+    transform-origin: bottom;
+    animation: leaves-appear ease-in-out .5s, leaves-2-move-1 ease-in-out 1s 2, leaves-2-move-2 ease-in-out 1s 2s 2;
     // height: 70%;
   }
 
@@ -82,6 +85,8 @@
     top: 53%;
     left: 50%;
     width: 26%;
+    animation: leaves-appear ease-in-out .5s, leaves-2-move-1 ease-in-out 1s 2, leaves-2-move-2 ease-in-out 1s 2s 2;
+
     // height: 70%;
   }
 
@@ -89,6 +94,7 @@
     top: 36%;
     left: 32%;
     width: 28%;
+    animation: suitcase-appear .8s;
     // height: 70%;
     // transform: scale(1.4);
   }
@@ -330,3 +336,50 @@
 @keyframes flamingo-move {
   50% { transform: rotate(-8deg); }
 }
+
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+@keyframes leaves-move-1 {
+  50% { transform: translateY(5px) rotate(10deg); }  
+}
+
+@keyframes leaves-move-2 {
+  50% { transform: translateY(0px) rotate(5deg); }
+}
+
+@keyframes leaves-2-move-1 {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(15px) rotate(-10deg); }  
+}
+
+@keyframes leaves-2-move-2 {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(5px) rotate(-5deg); }
+}
+
+@keyframes suitcase-appear {
+  0% {
+    opacity: 0;
+    transform: translateY(200%) scale(0);
+  }
+
+  95% {
+    opacity: 1;
+    transform: translateY(-2%) scale(1);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
