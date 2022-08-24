@@ -67,7 +67,10 @@
     width: 40%;
     transform-origin: bottom;
     opacity: 0;
-    animation: fade-in ease-in-out .3s .7s forwards, rotate-1 ease-in-out .4s .7s, leaves-move-1 ease-in-out 1s .8s 2, leaves-move-2 ease-in-out 1s 2.8s 1;
+    animation: fade-in ease-in-out .3s .7s forwards, 
+                // rotate-1 ease-in-out .4s .7s, 
+                leaves-move-1 ease-in-out 1s .8s 2, 
+                leaves-move-2 ease-in-out 1s 2.8s 1;
   }
 
   &--leaf-2 {
@@ -76,7 +79,10 @@
     width: 40%;
     transform-origin: bottom;
     opacity: 0;
-    animation: fade-in ease-in-out .3s .7s forwards, rotate-2 ease-in-out .4s .7s, leaves-2-move-1 ease-in-out 1s .8s 2, leaves-2-move-2 ease-in-out 1s 2.7s 1;
+    animation: fade-in ease-in-out .3s .7s forwards, 
+                // rotate-2 ease-in-out .4s .7s, 
+                leaves-2-move-1 ease-in-out 1s .8s 2, 
+                leaves-2-move-2 ease-in-out 1s 2.7s 1;
   }
 
   &--leaf-green {
@@ -84,7 +90,9 @@
     left: 52%;
     width: 45%;
     opacity: 0;
-    animation: fade-in ease-in-out .3s .7s forwards, leaves-move-1 ease-in-out 1s .7s 1, leaves-move-2 ease-in-out 1s 2.9s 2;
+    animation: fade-in ease-in-out .3s .7s forwards, 
+                leaves-move-1 ease-in-out 1s .7s 1, 
+                leaves-move-2 ease-in-out 1s 2.9s 2;
   }
 
   &--suitcase {
@@ -99,7 +107,9 @@
     left: 20%;
     width: 30%;
     transform: translateY(100%);
-    animation: flamingo-appear .4s forwards, flamingo-shake ease-in-out 2s .5s infinite, flamingo-move ease-in-out 2.2s 2s infinite;
+    animation: flamingo-appear .4s forwards, 
+              flamingo-shake ease-in-out 2s .5s infinite, 
+              flamingo-move ease-in-out 2.2s 2s infinite;
     }
 }
 
@@ -261,12 +271,38 @@
 .result__form {
   margin-top: auto;
 
+  .form--result {
+    justify-content: flex-end;
+  }
+
   .form__field {
-    animation: input-appear .4s 1s forwards;
+    transform: scaleX(1);
+    width: 0;
+    animation-name: input-appear, fade-in;
+    animation-duration: .4s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+
+    @media (min-width: $stop-scaling) {
+      animation-name: input-appear-stop-scaling, fade-in;
+    }
+
+    @media (orientation: portrait) {
+      animation-name: input-appear-portrait, fade-in;
+    }
+
+    @media (max-width: $tablet) and (orientation: landscape) {
+      animation-name: input-appear-tablet, fade-in;
+    }
+
+    @media (max-width: $mobile) and (orientation: landscape) {
+      animation-name: input-appear-mobile, fade-in;
+    }
   }
 
   .form__button {
     opacity: 0;
+    max-width: 28rem;
     animation: fade-in .4s .5s forwards;
 
     span, svg {
@@ -332,16 +368,6 @@
   }
 }
 
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
 @keyframes rotate-1 {
   from {
     transform: rotate(-40deg);
@@ -371,7 +397,7 @@
 
 @keyframes flamingo-shake {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-15px) rotate(-5deg); }
+  50% { transform: translateY(-1.5rem) rotate(-5deg); }
 }
 
 @keyframes flamingo-move {
@@ -379,21 +405,21 @@
 }
 
 @keyframes leaves-move-1 {
-  50% { transform: translateY(5px) rotate(5deg); }  
+  50% { transform: translateY(.5rem) rotate(5deg); }  
 }
 
 @keyframes leaves-move-2 {
-  50% { transform: translateY(0px) rotate(5deg); }
+  50% { transform: translateY(0) rotate(5deg); }
 }
 
 @keyframes leaves-2-move-1 {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(15px) rotate(-10deg); }  
+  50% { transform: translateY(1.5rem) rotate(-10deg); }  
 }
 
 @keyframes leaves-2-move-2 {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(5px) rotate(-5deg); }
+  50% { transform: translateY(.5rem) rotate(-5deg); }
 }
 
 @keyframes suitcase-appear {
@@ -414,7 +440,31 @@
 
 @keyframes input-appear {
   to {
-    opacity: 1;
-    transform: scale(1);
+    width: calc(100% - 31rem);
   }
 }
+
+@keyframes input-appear-stop-scaling {
+  to {
+    width: calc(100% - 310px);
+  }
+}
+
+@keyframes input-appear-portrait {
+  to {
+    width: calc(100% - 5rem);
+  }
+}
+
+@keyframes input-appear-tablet {
+  to {
+    width: calc(100% - 9rem);
+  }
+}
+
+@keyframes input-appear-mobile {
+  to {
+    width: calc(100% - 5rem);
+  }
+}
+
