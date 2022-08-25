@@ -1,0 +1,11 @@
+@keyframes rotate{
+  to {
+    transform: translateX(0) rotate(0);
+  }
+}
+
+@keyframes visibility {
+  to {
+    visibility: visible;
+  }
+}

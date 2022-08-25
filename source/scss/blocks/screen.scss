@@ -301,6 +301,23 @@
     background-size: auto calc(100vh - 13.8rem), 100% 25rem;
     background-position: top center, bottom center;
   }
+
+  &.active {
+    .slider__control {
+      svg {
+        opacity: 0;
+        animation: fade-in .4s .1s forwards;
+      }
+    }
+    
+    .slider__control--prev {
+      animation: visibility .8s forwards, rotate .8s forwards;
+    }
+
+    .slider__control--next {
+      animation: visibility .8s forwards, rotate .8s forwards;
+    }
+  }
 }
 
 .screen--prizes {
