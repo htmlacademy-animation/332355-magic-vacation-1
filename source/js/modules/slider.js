@@ -1,3 +1,4 @@
+import {cleanElementClass} from '../utils';
 import Swiper from "swiper";
 
 export default () => {
@@ -53,11 +54,7 @@ export default () => {
         },
         on: {
           slideChange: () => {
-            const bodyClassName = body.className;
-            const classes = bodyClassName.split(` `).filter((el) => el.includes(`slide`));
-            if (classes.length) {
-              body.classList.remove(classes);
-            }
+            cleanElementClass(body, `slide`);
 
             if (storySlider.activeIndex === 0) {
               sliderContainer.style.backgroundImage = `url("img/slide1.jpg")`;

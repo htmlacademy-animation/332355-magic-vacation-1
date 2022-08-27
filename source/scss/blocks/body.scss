@@ -1,24 +1,6 @@
 body {
   &.slide-blue {
     .page-header__menu a:hover, .page-header__menu a:focus {
-      color: $c-blue;
-    }
-
-    .page-header__menu a:hover::after, .page-header__menu a:focus::after {
-      background-color: $c-blue;
-    }
-
-    .social-block__toggler {
-      color: $c-blue;
-    }
-
-    .social-block__link:hover {
-      color: $c-blue;
-    }
-  }
-
-  &.slide-blue-light {
-    .page-header__menu a:hover, .page-header__menu a:focus {
       color: $c-blue-light;
     }
 
@@ -27,11 +9,97 @@ body {
     }
 
     .social-block__toggler {
-      color: $c-blue-light;
+      color: $c-blue;
+
+      &:hover {
+        color: $c-blue-light;
+      }
+
+      &:active {
+        color: $c-blue-light;
+      }
+
+      &:focus::before {
+        border-color: $c-blue-light;
+      }
+
+      &:active:before {
+        background-color: $c-blue-light;
+        border-color: $c-blue-light;
+      }
     }
 
-    .social-block__link:hover {
+    .social-block__link {
+      &:hover {
+        color: $c-blue-light;
+      }
+
+      &:focus {
+        color: $c-blue-light;
+        border-color: $c-blue-light;
+      }
+    
+      &:active,
+      &:active:focus {
+        color: $c-blue-light;
+    
+        &::before {
+          background-color: $c-blue-light;
+          border-color: $c-blue-light;
+        }
+      }
+    }
+  }
+
+  &.slide-blue-light {
+    .page-header__menu a:hover, .page-header__menu a:focus {
+      color: $c-blue;
+    }
+
+    .page-header__menu a:hover::after, .page-header__menu a:focus::after {
+      background-color: $c-blue;
+    }
+
+    .social-block__toggler {
       color: $c-blue-light;
+
+      &:hover {
+        color: $c-blue;
+      }
+
+      &:active {
+        color: $c-light;
+      }
+
+      &:focus::before {
+        border-color: $c-blue;
+      }
+
+      &:active:before {
+        background-color: $c-blue;
+        border-color: $c-blue;
+      }
+    }
+
+    .social-block__link {
+      &:hover {
+        color: $c-blue;
+      }
+
+      &:focus {
+        color: $c-blue;
+        border-color: $c-blue;
+      }
+    
+      &:active,
+      &:active:focus {
+        color: $c-blue;
+    
+        &::before {
+          background-color: $c-blue;
+          border-color: $c-blue;
+        }
+      }
     }
   }
 

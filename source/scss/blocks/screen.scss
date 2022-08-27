@@ -47,7 +47,7 @@
   background-color: $c-light;
   z-index: 1;
   transform: translateY(100%);
-  transition: transform .4s cubic-bezier(.13,.85,.5,.5);
+  transition: transform .4s cubic-bezier(.13,.85,.5,.5), width .4s, height .4s;
 
   @media (max-width: $tablet) and (orientation: portrait) {
     width: 3.5rem;
@@ -57,6 +57,10 @@
     &.screen__footer--full {
       width: 100%;
       height: 18rem;
+
+      .screen__footer-wrapper {
+        transition: opacity .4s .2s;
+      }
     }
   }
 
@@ -338,6 +342,10 @@
       transform: translateY(0);
     }
   }
+
+  .screen__footer-note {
+    animation: fade-in .4s;
+  }
 }
 
 .screen--game {
@@ -377,7 +385,7 @@
   left: 0;
   right: 0;
   background-color: $c-dark;
-  opacity: 0;
+  // opacity: 0;
   pointer-events: none;
 
   &.screen--show {
@@ -388,4 +396,14 @@
 
 .screen--rules {
   background-color: $c-dark;
+
+  .disclaimer ul {
+    opacity: 0;
+  }
+
+  &.active {
+    .disclaimer ul {
+      animation: fade-in .4s forwards;
+    }
+  }
 }

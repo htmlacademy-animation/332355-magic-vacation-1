@@ -37,16 +37,12 @@ export default class AccentTypographyBuild {
       this._timeOffset = 60;
     }
 
-    console.log(wordIndex)
     if (wordIndex > 0) {
       this._timeOffset = this._timeOffset + 200;
-      
     }
 
-    
     return span;
   }
-
 
   getTransition() {
     return `${this._property} ${this._timer}ms ease ${this._timeOffset}ms`;
