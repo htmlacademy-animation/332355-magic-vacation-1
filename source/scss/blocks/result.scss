@@ -208,7 +208,7 @@
     width: 4rem;
     height: 4rem;
     color: $c-dark;
-    transform: translateX(200%);
+    transform: translateX(150%) rotate(90deg);
     animation: rotate .6s .2s forwards;
 
     @media (min-width: $stop-scaling) {
