@@ -1,8 +1,10 @@
+import {cleanElementClass} from '../utils';
 import Swiper from "swiper";
 
 export default () => {
   let storySlider;
   let sliderContainer = document.getElementById(`story`);
+  const body = document.querySelector(`body`);
   sliderContainer.style.backgroundImage = `url("img/slide1.jpg"), linear-gradient(180deg, rgba(83, 65, 118, 0) 0%, #523E75 16.85%)`;
 
   const setSlider = function () {
@@ -52,14 +54,19 @@ export default () => {
         },
         on: {
           slideChange: () => {
+            cleanElementClass(body, `slide`);
+
             if (storySlider.activeIndex === 0) {
               sliderContainer.style.backgroundImage = `url("img/slide1.jpg")`;
             } else if (storySlider.activeIndex === 2) {
               sliderContainer.style.backgroundImage = `url("img/slide2.jpg")`;
+              body.classList.add(`slide-blue`);
             } else if (storySlider.activeIndex === 4) {
               sliderContainer.style.backgroundImage = `url("img/slide3.jpg")`;
+              body.classList.add(`slide-blue-light`);
             } else if (storySlider.activeIndex === 6) {
               sliderContainer.style.backgroundImage = `url("img/slide4.jpg")`;
+              body.classList.add(`slide-dark`);
             }
           },
           resize: () => {

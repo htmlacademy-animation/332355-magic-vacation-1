@@ -181,6 +181,7 @@
   width: 4rem;
   height: 4rem;
   color: $c-dark;
+  visibility: hidden;
 
   @media (min-width: $stop-scaling) {
     width: 40px;
@@ -244,6 +245,14 @@
   &.swiper-button-disabled {
     opacity: 0.5;
     pointer-events: none;
+  }
+
+  &--prev {
+    transform: translateX(-200%) rotate(-90deg);
+  }
+
+  &--next {
+    transform: translateX(200%) rotate(90deg);
   }
 }
 

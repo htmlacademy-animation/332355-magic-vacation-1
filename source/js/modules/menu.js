@@ -1,3 +1,5 @@
+import {cleanElementClass} from "../utils";
+
 export default () => {
   let header = document.querySelector(`.js-header`);
   let menuToggler = document.querySelector(`.js-menu-toggler`);
@@ -15,6 +17,8 @@ export default () => {
       }
     });
   }
+
+  const body = document.querySelector(`body`);
 
   for (let i = 0; i < menuLinks.length; i++) {
     menuLinks[i].addEventListener(`click`, function (evt) {
@@ -35,6 +39,8 @@ export default () => {
         header.classList.remove(`page-header--menu-opened`);
         document.body.classList.remove(`menu-opened`);
       }
+
+      cleanElementClass(body, `slide`);
     });
   }
 };
