@@ -2827,7 +2827,7 @@ img {
   width: 4rem;
   height: 4rem;
   color: #5f458c;
-  transform: translateX(200%);
+  transform: translateX(150%) rotate(90deg);
   animation: rotate 0.6s 0.2s forwards;
 }
 @media (min-width: 2000px) {
