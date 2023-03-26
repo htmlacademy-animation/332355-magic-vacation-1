@@ -1,4 +1,5 @@
 import AccentTypographyBuild from './accent-typography-builder';
+import observer from './observer';
 
 export default () => {
   document.querySelectorAll(`.title`).forEach((title) => {
@@ -9,6 +10,7 @@ export default () => {
       setTimeout(() => {
         text.runAnimation();
       }, 500);
+      observer();
     });
   });
 };
