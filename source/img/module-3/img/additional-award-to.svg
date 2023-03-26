@@ -1,5 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 350 330">
   <g>
+    <!-- здесь будет анимация svg -->
     <path d="M253.93,232.11a5.69,5.69,0,1,0-5.69-5.69,5.69,5.69,0,0,0,5.69,5.69" fill="#a67ee5"/>
     <circle cx="253.93" cy="226.42" r="5.69" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="2"/>
     <path d="M240.3,210.48H67.19a12,12,0,0,0-12,11.9V276a13,13,0,0,0,13,13h184V222.38a12,12,0,0,0-11.94-11.9" fill="#a67ee5"/>
