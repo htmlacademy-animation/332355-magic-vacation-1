@@ -5,3 +5,7 @@ export function cleanElementClass(el, className) {
     el.classList.remove(classes);
   }
 }
+
+export function formatNumber(num) {
+  return num < 10 ? `0${num}` : num;
+}
