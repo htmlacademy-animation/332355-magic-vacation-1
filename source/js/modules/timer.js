@@ -1,6 +1,7 @@
 import {formatNumber} from "../utils";
 export default () => {
   const COUNT = 5;
+  // eslint-disable-next-line no-unused-vars
   let done = false;
   let start = new Date();
   const STOP = start.setMinutes(start.getMinutes() + COUNT);
