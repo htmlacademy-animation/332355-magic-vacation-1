@@ -1,5 +1,6 @@
 import {formatNumber} from "../utils";
-export default () => {
+
+export function timer() {
   const COUNT = 5;
   // eslint-disable-next-line no-unused-vars
   let done = false;
@@ -13,7 +14,7 @@ export default () => {
 
     if (remain < 0) {
       done = true;
-      window.cancelAnimationFrame(checkDate);
+      cancelAnimationFrame(checkDate);
       return;
     }
 
@@ -21,9 +22,9 @@ export default () => {
     let sec = Math.floor(remain / 1000) % 60;
     counterNode.textContent = `${formatNumber(min)}:${formatNumber(sec)}`;
 
-    window.requestAnimationFrame(checkDate);
+    requestAnimationFrame(checkDate);
 
   }
 
-  requestAnimationFrame(checkDate);
+  checkDate();
 };

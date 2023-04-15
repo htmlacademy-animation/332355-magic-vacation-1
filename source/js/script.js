@@ -8,7 +8,7 @@ import chat from './modules/chat.js';
 import result from './modules/result.js';
 import form from './modules/form.js';
 import social from './modules/social.js';
-import timer from './modules/timer.js';
+import game from './modules/game.js';
 import pageSwitchHandler from './modules/page-switch-handler.js';
 import FullPageScroll from './modules/full-page-scroll';
 
@@ -22,7 +22,7 @@ chat();
 result();
 form();
 social();
-timer();
+game();
 pageSwitchHandler();
 
 const fullPageScroll = new FullPageScroll();

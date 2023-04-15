@@ -21,15 +21,16 @@ export default () => {
   const body = document.querySelector(`body`);
 
   for (let i = 0; i < menuLinks.length; i++) {
-    menuLinks[i].addEventListener(`click`, function (evt) {
+    const link = menuLinks[i];
+    link.addEventListener(`click`, function (evt) {
 
-      if (menuLinks[i].dataset.href.includes(`prize`) && window.location.href.includes(`story`)) {
+      if (link.dataset.href.includes(`prize`) && window.location.href.includes(`story`)) {
         overlay.classList.add(`overlay--visible`);
 
         evt.preventDefault();
 
         setTimeout(() => {
-          window.location.href = `#${menuLinks[i].dataset.href}`;
+          window.location.href = `#${link.dataset.href}`;
         }, 500);
       } else {
         overlay.classList.remove(`overlay--visible`);
