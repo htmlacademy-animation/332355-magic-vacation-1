@@ -188,6 +188,18 @@
         width: 7rem;
       }
     }
+
+    b {
+      min-width: 7rem;
+
+      @media (max-width: $tablet) and (orientation: landscape) {
+        min-width: 3.5rem;
+      }
+
+      @media (max-width: $mobile) and (orientation: landscape) {
+        min-width: 2rem;
+      }
+    }
   }
 
   &--codes {
@@ -212,6 +224,18 @@
 
       @media (max-width: $mobile) and (orientation: landscape) {
         width: 10rem;
+      }
+    }
+
+    b {
+      min-width: 20rem;
+
+      @media (max-width: $tablet) and (orientation: landscape) {
+        min-width: 10rem;
+      }
+
+      @media (max-width: $mobile) and (orientation: landscape) {
+        min-width: 6rem;
       }
     }
   }
@@ -261,6 +285,7 @@
   }
 
   b {
+    display: inline-block;
     font-family: $font-alt;
     font-weight: 400;
     font-size: 12rem;
