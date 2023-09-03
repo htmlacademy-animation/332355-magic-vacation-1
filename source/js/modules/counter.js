@@ -1,3 +1,4 @@
+
 // общие переменные для реализации точного fps
 let fpsInterval = 1000 / 12;
 let now;
@@ -8,7 +9,11 @@ let countBig = 11;
 const nodes = Array.from(document.querySelectorAll(`.prizes__count`));
 
 function draw() {
+
+
   nodes.forEach((node, i) => {
+    console.log(i)
+
     if (i === 1 && count < 7) {
       count++;
       node.textContent = count;
@@ -26,7 +31,7 @@ function draw() {
   });
 }
 
-function startCounter() {
+export function startCounter() {
   // отправляем на отрисовку следующий кадр
   requestAnimationFrame(startCounter);
 
@@ -43,5 +48,3 @@ function startCounter() {
     draw();
   }
 }
-
-requestAnimationFrame(startCounter);
