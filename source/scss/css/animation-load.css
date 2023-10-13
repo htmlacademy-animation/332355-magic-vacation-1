@@ -1,0 +1,19 @@
+body.loaded .page-header {
+  opacity: 1;
+}
+
+body.loaded .screen__footer {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+body.loaded .page-header__logo {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+body.loaded .social-block__toggler::before {
+  -webkit-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
+}

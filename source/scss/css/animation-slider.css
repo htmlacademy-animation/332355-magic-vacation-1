@@ -1,0 +1,25 @@
+@-webkit-keyframes rotate {
+  to {
+    -webkit-transform: translateX(0) rotate(0);
+            transform: translateX(0) rotate(0);
+  }
+}
+
+@keyframes rotate {
+  to {
+    -webkit-transform: translateX(0) rotate(0);
+            transform: translateX(0) rotate(0);
+  }
+}
+
+@-webkit-keyframes visibility {
+  to {
+    visibility: visible;
+  }
+}
+
+@keyframes visibility {
+  to {
+    visibility: visible;
+  }
+}
