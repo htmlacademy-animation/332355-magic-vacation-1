@@ -12,8 +12,6 @@ function draw() {
 
 
   nodes.forEach((node, i) => {
-    console.log(i)
-
     if (i === 1 && count < 7) {
       count++;
       node.textContent = count;
